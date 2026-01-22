@@ -1,7 +1,3 @@
-Siap, ini versi README.md paling lengkap yang sudah saya modifikasi total. Isinya sudah mencakup semua fitur advanced yang kamu sebutkan (Bulk Action, PDF, Search, dll) agar Pak Ali benar-benar terkesan dengan inisiatif kamu sebagai Fullstack Developer.
-
-Silakan copy-paste seluruh teks di bawah ini ke file README.md kamu:
-
 Technical Test - Junior Fullstack Developer
 Sistem Inventaris Pro & Role Management (RBAC)
 Project ini dikembangkan untuk memenuhi tugas seleksi teknis di PT Multiartha Prima Sejahtera. Aplikasi ini mengintegrasikan sistem manajemen stok barang dengan kontrol akses pengguna berbasis peran (Role-Based Access Control) serta fitur monitoring aktivitas transaksi yang komprehensif.
