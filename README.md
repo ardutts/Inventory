@@ -1,72 +1,73 @@
-Technical Test - Junior Fullstack Developer
-Sistem Inventaris Pro & Role Management (RBAC)
-Project ini dikembangkan untuk memenuhi tugas seleksi teknis di PT Multiartha Prima Sejahtera. Aplikasi ini mengintegrasikan sistem manajemen stok barang dengan kontrol akses pengguna berbasis peran (Role-Based Access Control) serta fitur monitoring aktivitas transaksi yang komprehensif.
+# 📦 Inventaris Pro & Role Management (RBAC)
+### Technical Test - Junior Fullstack Developer
 
-🛠️ Stack Teknologi
-Backend: Laravel 11
+![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 
-Database: MySQL (Relational)
+Project ini dikembangkan untuk memenuhi tugas seleksi teknis di **PT Multiartha Prima Sejahtera**. Aplikasi ini mengintegrasikan sistem manajemen stok barang dengan kontrol akses pengguna berbasis peran (Role-Based Access Control) serta fitur monitoring aktivitas transaksi yang komprehensif.
 
-Authentication: JWT (JSON Web Token)
+---
 
-Frontend: Blade Templating & Tailwind CSS
+## 🛠️ Stack Teknologi
 
-Reporting: DomPDF (Export Laporan PDF)
+| Komponen | Teknologi |
+| :--- | :--- |
+| **Backend** | Laravel 11 (PHP >= 8.2) |
+| **Database** | MySQL (Relational) |
+| **Authentication** | JSON Web Token (JWT) |
+| **Frontend** | Blade Templating & Tailwind CSS |
+| **Reporting** | DomPDF (Export Laporan PDF) |
+| **Tools** | Composer, NPM, Git |
 
-Tools: Composer, NPM, Git
+---
 
-🚀 Fitur Utama & Logika Bisnis
-1. Keamanan & Akses (RBAC)
-Sistem Autentikasi JWT: Mengamankan seluruh endpoint dan menjaga integritas data pengguna.
+## 🚀 Fitur Utama & Logika Bisnis
 
-Role Management:
+### 1. Keamanan & Akses (RBAC)
+* **Sistem Autentikasi JWT**: Mengamankan seluruh endpoint dan menjaga integritas data pengguna.
+* **Role Management**:
+    * **Admin**: Kontrol penuh sistem, manajemen user, dan monitoring aktivitas global.
+    * **Seller**: Manajemen stok etalase dan proses penjualan.
+    * **Pelanggan**: Melakukan pembelian dan memantau riwayat pesanan.
+* **Bulk Role Update**: Fitur efisiensi bagi Admin untuk mengubah role banyak user sekaligus menggunakan checkbox (**Bulk Action**).
 
-Admin: Kontrol penuh sistem, manajemen user, dan monitoring aktivitas global.
+### 2. Manajemen Inventaris & Aktivitas
+* **Dashboard Monitor**: Admin dapat memantau secara real-time aktivitas Seller saat memasukkan produk ke etalase.
+* **Smart Search**: Fitur pencarian cepat di sisi Admin, Seller, maupun Pelanggan untuk mempermudah navigasi data barang.
+* **Validation Logic**: Sistem secara otomatis menolak transaksi jika stok kurang dari jumlah permintaan (`Stock cannot be negative`).
 
-Seller: Manajemen stok etalase dan proses penjualan.
+### 3. Transaksi & Riwayat (Audit Log)
+* **Customer Journey**: Pelanggan dapat melakukan pembelian barang secara langsung dan melihat **Riwayat Pembelian** pribadi.
+* **Laporan Terintegrasi**: Mencatat histori barang masuk (oleh Admin/Seller) dan barang keluar (terjual ke Customer).
+* **Cetak Laporan PDF**: Fitur ekspor laporan profesional:
+    * Laporan Barang Masuk & Keluar.
+    * Laporan Stok Inventaris saat ini.
+    * Laporan Barang Terjual (Sales Report).
 
-Pelanggan: Melakukan pembelian dan memantau riwayat pesanan.
+---
 
-Bulk Role Update: Fitur efisiensi bagi Admin untuk mengubah role banyak user sekaligus menggunakan checkbox (Bulk Action).
+## 🏗️ Struktur Database
+Project ini menerapkan skema database relasional untuk menjamin konsistensi data.
 
-2. Manajemen Inventaris & Aktivitas
-Dashboard Monitor: Admin dapat memantau secara real-time aktivitas Seller saat memasukkan produk ke etalase.
 
-Smart Search: Fitur pencarian cepat di sisi Admin, Seller, maupun Pelanggan untuk mempermudah navigasi data barang.
 
-Validation Logic: Sistem secara otomatis menolak transaksi jika stok kurang dari jumlah permintaan (Stock cannot be negative).
+* `roles`: Master data peran pengguna.
+* `users`: Data pengguna dengan relasi `role_id`.
+* `products`: Data utama barang dan stok etalase.
+* `transactions/histories`: Mencatat log barang masuk, keluar, dan pembelian oleh customer.
 
-3. Transaksi & Riwayat (Audit Log)
-Customer Journey: Pelanggan dapat melakukan pembelian barang secara langsung dan melihat Riwayat Pembelian pribadi.
+---
 
-Laporan Terintegrasi: Mencatat histori barang masuk (oleh Admin/Seller) dan barang keluar (terjual ke Customer).
+## ⚙️ Instruksi Instalasi & Setup Lokal
 
-Cetak Laporan PDF: Fitur ekspor laporan profesional yang mencakup:
+### 1. Persiapan
+Pastikan Anda sudah menginstall **PHP >= 8.2**, **Composer**, dan **MySQL**.
 
-Laporan Barang Masuk & Keluar.
-
-Laporan Stok Inventaris saat ini.
-
-Laporan Barang Terjual (Sales Report).
-
-🏗️ Struktur Database (Relational)
-Project ini menerapkan skema database relasional untuk menjamin konsistensi data:
-
-roles: Master data peran pengguna.
-
-users: Data pengguna dengan relasi role_id.
-
-products: Data utama barang dan stok etalase.
-
-transactions/histories: Mencatat log barang masuk, keluar, dan pembelian oleh customer.
-
-⚙️ Instruksi Instalasi & Setup Lokal
-1. Persiapan
-Pastikan Anda sudah menginstall PHP >= 8.2, Composer, dan MySQL.
-
-2. Clone Repository
-Bash
-git clone https://github.com/ardutts/inventory.git
+### 2. Clone Repository
+```bash
+git clone [https://github.com/ardutts/inventory.git](https://github.com/ardutts/inventory.git)
 cd inventory
 3. Install Dependencies
 Bash
