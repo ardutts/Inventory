@@ -44,7 +44,7 @@ Pastikan Anda sudah menginstall PHP >= 8.2, Composer, dan MySQL.
 
 ### 2. Clone Repository
 ```bash
-git clone [https://github.com/username-lo/inventaris-pro-test.git](https://github.com/username-lo/inventaris-pro-test.git)
+git clone [https://github.com/username-lo/inventaris-pro-test.git](https://github.com/ardutts/inventory.git)
 cd inventaris-pro-test
 3. Install Dependencies
 Bash
