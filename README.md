@@ -46,28 +46,30 @@ Pastikan Anda sudah menginstall PHP >= 8.2, Composer, dan MySQL.
 ```bash
 git clone [https://github.com/ardutts/inventory.git](https://github.com/ardutts/inventory.git)
 cd inventaris-pro-test
+
 3. Install Dependencies
 Bash
 composer install
 npm install && npm run build
 4. Konfigurasi Environment
-Salin file .env.example ke .env dan atur koneksi database Anda:
 
-Bash
 cp .env.example .env
-Sesuaikan bagian:
 
-Cuplikan kode
-DB_DATABASE=nama_db_lo
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=tech_test
 DB_USERNAME=root
 DB_PASSWORD=
+
 5. Setup Database & JWT
-Jalankan perintah ini untuk generate key, migrasi tabel, dan mengisi data awal (seeding):
+generate key, migrasi tabel, dan mengisi data awal (seeding):
 
 Bash
 php artisan key:generate
 php artisan jwt:secret
 php artisan migrate --seed
+
 6. Jalankan Server
 Bash
 php artisan serve
